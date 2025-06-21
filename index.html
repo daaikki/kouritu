@@ -107,10 +107,10 @@
             display: block;
         }
 
-        /* MathJaxのフォントを上書きしないように調整 */
+        /* MathJaxのフォントを上書きしないように調整 (サイズと太字は個別のTailwindクラスで制御) */
         .math-text {
-            font-size: 1rem; /* デフォルトのフォントサイズに戻すか、必要に応じて調整 */
-            font-weight: normal; /* 太字を解除 */
+            /* font-size: 1rem; */
+            /* font-weight: normal; */
         }
     </style>
 </head>
@@ -175,7 +175,7 @@
                         </div>
                     </div>
                     <div class="text-left">
-                        <h3 class="text-xl font-bold text-[#03045E] mb-3">学年別評定の比率：1 : 1 : 3</h3>
+                        <h3 class="text-xl font-bold text-[#03045E] mb-3">学年別評定の比率：2 : 2 : 6</h3>
                         <p class="mb-4">グラフが示す通り、中学1・2年生の評定に対し、中学3年生の評定は<strong class="text-[#0077B6] text-xl">3倍</strong>の重みで計算されます。この中3重視のルールは、生徒に最後まで努力し続けることの重要性を伝える強力な根拠となります。</p>
                         <ul class="list-disc list-inside space-y-2">
                             <li><strong class="text-[#03045E]">指導の核心:</strong> 中3の定期テスト対策、提出物の徹底、授業態度が合否に直結することを伝えましょう。</li>
@@ -195,30 +195,30 @@
                     <div class="p-4 bg-gray-50 rounded-lg shadow-sm">
                         <h3 class="font-bold text-lg text-[#03045E] mb-2">1. 各学年の評定の合計</h3>
                         <p class="math-text">中学校の通知表に記載される各教科の評定（5段階評価）を使用します。主要5教科（国語、数学、英語、理科、社会）と実技4教科（音楽、美術、保健体育、技術・家庭）の計9教科が対象です。</p>
-                        <p class="math-text mt-2 font-semibold">各学年9教科の満点: $$5 \text{点} \times 9 \text{教科} = 45 \text{点}$$</p>
+                        <p class="math-text mt-2 font-semibold text-3xl text-[#0077B6]">各学年9教科の満点: 5点 × 9教科 = 45点</p>
                     </div>
                     <div class="text-center text-3xl text-[#0077B6]">▼</div>
                     <div class="p-4 bg-gray-50 rounded-lg shadow-sm">
                         <h3 class="font-bold text-lg text-[#03045E] mb-2">2. 学年ごとの重み付け</h3>
                         <p class="math-text">中学1年生、中学2年生、中学3年生の評定にそれぞれ重みがかけられます。</p>
-                        <p class="math-text mt-2 font-semibold">比率: 中学1年生 : 中学2年生 : 中学3年生 ＝ 1 : 1 : 3</p>
+                        <p class="math-text mt-2 font-semibold text-3xl text-[#0077B6]">比率: 中学1年生 : 中学2年生 : 中学3年生 ＝ 2 : 2 : 6</p>
                         <ul class="list-disc list-inside math-text mt-2 ml-4">
-                            <li>中学1年生の評定合計: $$45 \text{点} \times 1 = 45 \text{点}$$</li>
-                            <li>中学2年生の評定合計: $$45 \text{点} \times 1 = 45 \text{点}$$</li>
-                            <li>中学3年生の評定合計: $$45 \text{点} \times 3 = 135 \text{点}$$</li>
+                            <li>中学1年生の評定合計: <span class="font-semibold text-3xl text-[#0077B6]">45点 × 2 = 90点</span></li>
+                            <li>中学2年生の評定合計: <span class="font-semibold text-3xl text-[#0077B6]">45点 × 2 = 90点</span></li>
+                            <li>中学3年生の評定合計: <span class="font-semibold text-3xl text-[#0077B6]">45点 × 6 = 270点</span></li>
                         </ul>
                     </div>
                     <div class="text-center text-3xl text-[#0077B6]">▼</div>
                     <div class="p-4 bg-gray-50 rounded-lg shadow-sm">
-                        <h3 class="font-bold text-lg text-[#03045E] mb-2">3. 内申点の最終合計（225点満点）</h3>
-                        <p class="math-text">上記を合計すると、内申点の満点は225点となります。</p>
-                        <p class="math-text mt-2 font-semibold">合計: $$45 + 45 + 135 = 225 \text{点}$$</p>
+                        <h3 class="font-bold text-lg text-[#03045E] mb-2">3. 内申点の最終合計（450点満点）</h3>
+                        <p class="math-text">上記を合計すると、内申点の満点は450点となります。</p>
+                        <p class="math-text mt-2 font-semibold text-3xl text-[#0077B6]">合計: 90 + 90 + 270 = 450点</p>
                     </div>
                     <div class="text-center text-3xl text-[#0077B6]">▼</div>
                     <div class="p-4 bg-gray-50 rounded-lg shadow-sm">
                         <h3 class="font-bold text-lg text-[#03045E] mb-2">4. 最終的な内申点の調整（450点満点）</h3>
-                        <p class="math-text">合否判定に用いられる際、内申点は学力検査の満点（5教科 × 90点 = 450点）に合わせる形で調整されます。これにより、内申点の最終的な満点も学力検査と同じ 450点 となります。</p>
-                        <p class="math-text mt-2 font-semibold">最終内申点満点: 450点</p>
+                        <p class="math-text">合否判定に用いられる内申点は、学力検査の満点（5教科 × 90点 = 450点）と同じく 450点満点 となります。</p>
+                        <p class="math-text mt-2 font-semibold text-3xl text-[#0077B6]">最終内申点満点: 450点</p>
                     </div>
                     <div class="text-center text-3xl text-[#0077B6]">▼</div>
                     <div class="p-4 bg-gray-50 rounded-lg shadow-sm">
@@ -229,7 +229,7 @@
                                 <thead>
                                     <tr class="bg-[#0077B6] text-white">
                                         <th class="p-3 font-bold uppercase whitespace-nowrap">比重タイプ</th>
-                                        <th class="p-3 font-bold uppercase whitespace-nowrap">学力検査：調査書</th>
+                                        <th class="p-3 font-bold uppercase">学力検査：調査書</th>
                                         <th class="p-3 font-bold uppercase whitespace-nowrap">内申点 (450点満点) が最終的に扱われる満点</th>
                                     </tr>
                                 </thead>
@@ -470,14 +470,14 @@
                                         <li><strong class="font-semibold">教科書全般からの出題:</strong> 基礎知識の定着と応用力が問われる。</li>
                                         <li><strong class="font-semibold">実験・観察に関する問題:</strong> 実験器具の名称や操作、結果の考察、グラフの読み取りなどが頻出。</li>
                                         <li><strong class="font-semibold">計算問題:</strong> 物理・化学分野を中心に計算力を要する問題が出題される。</li>
-                                        <li><strong class="font-semibold">単元融合問題:</b> 複数の単元知識を組み合わせた問題が見られる。</li>
+                                        <li><strong class="font-semibold">単元融合問題:</strong> 複数の単元知識を組み合わせた問題が見られる。</li>
                                     </ul>
                                 </td>
                                 <td class="p-3">
                                     <ul class="list-disc list-inside text-sm">
                                         <li><strong class="font-semibold text-[#0077B6]">用語の正確な暗記と理解:</strong> 基礎知識を確実に定着させる。</li>
                                         <li><strong class="font-semibold text-[#0077B6]">実験の目的・方法・結果・考察の理解:</b> 教科書の実験や観察を深く理解し、考察力を養う。</li>
-                                        <li><strong class="font-semibold text-[#0077B6]">計算問題の反復練習:</b> 特に苦手な分野の計算問題は徹底的に練習する。</li>
+                                        <li><strong class="font-semibold text-[#0077B6]">計算問題の反復練習:</strong> 特に苦手な分野の計算問題は徹底的に練習する。</li>
                                         <li><strong class="font-semibold text-[#0077B6]">過去問演習:</b> 共通問題の形式に慣れ、図やグラフを用いた問題の読み取りと解答に慣れる。</li>
                                     </ul>
                                 </td>
@@ -490,17 +490,17 @@
                                         <li><strong class="font-semibold">地理・歴史・公民の各分野から満遍なく出題:</strong> 幅広い知識が求められる。</li>
                                         <li><strong class="font-semibold">資料読み取り問題:</strong> 地図、グラフ、統計、年表などの資料を正確に読み取る問題が多い。</li>
                                         <li><strong class="font-semibold">複数分野を横断した思考力:</strong> 歴史的背景と地理的要因を関連付けたり、公民の知識を時事問題に当てはめたりする問題。</li>
-                                        <li><strong class="font-semibold">時事問題との関連付け:</b> 近年発生した出来事や社会問題と関連付けた出題が見られることがある。</li>
+                                        <li><strong class="font-semibold">時事問題との関連付け:</strong> 近年発生した出来事や社会問題と関連付けた出題が見られることがある。</li>
                                     </ul>
                                 </td>
                                 <td class="p-3">
                                     <ul class="list-disc list-inside text-sm">
                                         <li><strong class="font-semibold text-[#0077B6]">基礎知識の定着:</strong> 各分野の重要用語や概念を正確に覚える。</li>
                                         <li><strong class="font-semibold text-[#0077B6]">歴史の「流れ」の理解:</strong> 年号や出来事の暗記だけでなく、時代の背景や因果関係を理解する。</li>
-                                        <li><strong class="font-semibold text-[#0077B6]">地理の「関連性」の理解:</b> 気候、地形、産業、文化などの地域ごとの関連性を理解する。</li>
+                                        <li><strong class="font-semibold text-[#0077B6]">地理の「関連性」の理解:</strong> 気候、地形、産業、文化などの地域ごとの関連性を理解する。</li>
                                         <li><strong class="font-semibold text-[#0077B6]">公民の「仕組み」と「課題」の理解:</strong> 政治・経済・社会の仕組みと、現代社会の課題について深く理解する。</li>
-                                        <li><strong class="font-semibold text-[#0077B6]">資料問題演習:</b> 資料から必要な情報を抽出し、分析する練習を徹底する。</li>
-                                        <li><strong class="font-semibold text-[#0077B6]">時事問題への関心:</b> 日頃からニュースや新聞に触れ、社会の動きに関心を持つ。</li>
+                                        <li><strong class="font-semibold text-[#0077B6]">資料問題演習:</strong> 資料から必要な情報を抽出し、分析する練習を徹底する。</li>
+                                        <li><strong class="font-semibold text-[#0077B6]">時事問題への関心:</strong> 日頃からニュースや新聞に触れ、社会の動きに関心を持つ。</li>
                                     </ul>
                                 </td>
                             </tr>
@@ -1051,7 +1051,7 @@
                 <h3 class="text-xl font-bold text-[#03045E] mb-3 mt-6">五ツ木模試のポイント</h3>
                 <ul class="list-disc list-inside text-base space-y-2 mb-6">
                     <li><strong class="font-semibold text-[#0077B6]">受験者数の多さ:</strong> 府内最大の規模を誇り、信頼性の高いデータが得られます。</li>
-                    <li><strong class="font-semibold text-[#0077B6]">志望校判定:</strong> 詳細なデータに基づいた合格可能性判定は、志望校選びの強力な参考になります。</li>
+                    <li><strong class="font-semibold text-[#0077B6]">志望校判定:</b> 詳細なデータに基づいた合格可能性判定は、志望校選びの強力な参考になります。</li>
                     <li><strong class="font-semibold text-[#0077B6]">出題傾向の把握:</b> 大阪府の公立高校入試の出題傾向に合わせた問題形式で、実戦的な対策が可能です。</li>
                     <li><strong class="font-semibold text-[#0077B6]">学力の定点観測:</strong> 定期的に受験することで、学力の伸びや苦手分野の変化を把握できます。特に夏以降のテストは重要です。</li>
                 </ul>
@@ -1274,7 +1274,7 @@
                     labels: ['中学1年生', '中学2年生', '中学3年生'], // ラベル
                     datasets: [{
                         label: '内申点評定の比重', // データセットのラベル
-                        data: [1, 1, 3], // データ
+                        data: [2, 2, 6], // データ (比重を2:2:6に変更)
                         backgroundColor: [ // 背景色
                             vibrantBlues.lightBlue,
                             vibrantBlues.tertiary,
