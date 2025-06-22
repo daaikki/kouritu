@@ -20,10 +20,10 @@
         /* 基本フォントと背景色を設定 */
         body {
             font-family: 'Noto Sans JP', sans-serif;
-            background-color: #f0f4f8; /* 明るいグレーブルーの背景 */
-            scroll-behavior: smooth; /* スムーズスクロール */
+            background-color: #f0f4f8; /* Bright gray-blue background */
+            scroll-behavior: smooth; /* Smooth scrolling */
         }
-        /* チャートコンテナのスタイル設定 */
+        /* Chart container style settings */
         .chart-container {
             position: relative;
             width: 100%;
@@ -33,66 +33,66 @@
             height: 350px;
             max-height: 50vh;
         }
-        /* モバイル表示時のチャートコンテナの高さ調整 */
+        /* Adjust chart container height for mobile display */
         @media (max-width: 768px) {
             .chart-container {
                 height: 300px;
                 max-height: 40vh;
             }
         }
-        /* フローチャートボックスのスタイル設定 */
+        /* Flowchart box style settings */
         .flow-chart-box {
-            border: 2px solid #00B4D8; /* ライトブルーのボーダー */
-            background-color: #CAF0F8; /* 非常に明るいブルーの背景 */
-            color: #03045E; /* 濃いインディゴブルーのテキスト */
+            border: 2px solid #00B4D8; /* Light blue border */
+            background-color: #CAF0F8; /* Very light blue background */
+            color: #03045E; /* Dark indigo blue text */
             position: relative;
         }
-        /* フローチャートの矢印のスタイル設定 */
+        /* Flowchart arrow style settings */
         .flow-chart-arrow {
-            color: #0077B6; /* ミディアムブルーの矢印 */
+            color: #0077B6; /* Medium blue arrow */
         }
-        /* セクションタイトルのスタイル設定 */
+        /* Section title style settings */
         .section-title {
-            color: #03045E; /* 濃いインディゴブルーのテキスト */
-            border-bottom: 3px solid #00B4D8; /* ライトブルーの下線 */
+            color: #03045E; /* Dark indigo blue text */
+            border-bottom: 3px solid #00B4D8; /* Light blue underline */
         }
-        /* カードコンポーネントのスタイル設定 */
+        /* Card component style settings */
         .card {
-            background-color: white; /* 白い背景 */
-            border-radius: 0.75rem; /* 角丸 */
-            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1); /* シャドウ */
-            transition: transform 0.3s ease, box-shadow 0.3s ease; /* ホバー時のトランジション */
+            background-color: white; /* White background */
+            border-radius: 0.75rem; /* Rounded corners */
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1); /* Shadow */
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Hover transition */
         }
-        /* カードホバー時のスタイル設定 */
+        /* Card hover style settings */
         .card:hover {
-            transform: translateY(-5px); /* 上に少し移動 */
-            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -2px rgb(0 0 0 / 0.1); /* 強めのシャドウ */
+            transform: translateY(-5px); /* Move slightly up */
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -2px rgb(0 0 0 / 0.1); /* Stronger shadow */
         }
-        /* ナビゲーションリンクのスタイル */
+        /* Navigation link style */
         .nav-link {
             padding: 0.5rem 1rem;
             border-radius: 0.5rem;
             transition: background-color 0.3s ease;
-            white-space: nowrap; /* テキストの折り返しを防ぐ */
+            white-space: nowrap; /* Prevent text wrapping */
         }
         .nav-link:hover {
             background-color: rgba(255, 255, 255, 0.2);
         }
 
-        /* タブのスタイル */
+        /* Tab styles */
         .tab-button {
             padding: 0.5rem 1rem;
             border-radius: 0.5rem;
             transition: background-color 0.3s ease, color 0.3s ease, border-bottom 0.3s ease;
             color: #4a5568; /* gray-700 */
-            border-bottom: 2px solid transparent; /* 初期状態では透明な下線 */
+            border-bottom: 2px solid transparent; /* Transparent underline initially */
         }
 
         .tab-button.active {
             background-color: #0077B6; /* secondary blue */
             color: white;
             font-weight: bold;
-            border-bottom: 2px solid #0077B6; /* アクティブなタブの色 */
+            border-bottom: 2px solid #0077B6; /* Active tab color */
         }
         .tab-button:not(.active):hover {
             background-color: #e2e8f0; /* hover:bg-gray-200 */
@@ -107,38 +107,96 @@
             display: block;
         }
 
-        /* MathJaxのフォントを上書きしないように調整 (サイズと太字は個別のTailwindクラスで制御) */
+        /* Adjust MathJax font (size and bold controlled by individual Tailwind classes) */
         .math-text {
             /* font-size: 1rem; */
             /* font-weight: normal; */
+        }
+
+        /* Hamburger menu specific styles */
+        @media (max-width: 767px) {
+            .nav-menu {
+                display: none; /* Hide by default on mobile */
+                width: 100%;
+                background-color: #03045E; /* Match header background */
+                padding: 1rem 0;
+                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            }
+            .nav-menu.active {
+                display: block; /* Show when active */
+            }
+            .nav-menu ul {
+                flex-direction: column; /* Stack links vertically */
+            }
+            .nav-menu li {
+                width: 100%;
+                text-align: center;
+            }
+            .nav-menu .nav-link {
+                display: block;
+                padding: 0.75rem 0;
+                width: 100%;
+                border-radius: 0;
+            }
+            .nav-toggle {
+                display: block; /* Show hamburger icon on mobile */
+            }
+        }
+        @media (min-width: 768px) {
+            .nav-menu {
+                display: block !important; /* Always show as block on desktop */
+                margin-top: 1rem; /* Add some space below the title/tagline */
+            }
+            .nav-menu ul {
+                display: flex; /* Ensure horizontal flex layout */
+                justify-content: center; /* Center the links */
+            }
+            .nav-toggle {
+                display: none; /* Hide hamburger icon on desktop */
+            }
         }
     </style>
 </head>
 <body class="bg-[#f0f4f8] text-[#333]">
 
     <!-- ヘッダーセクション -->
-    <header class="bg-[#03045E] text-white p-6 text-center shadow-lg sticky top-0 z-50">
-        <h1 class="text-3xl md:text-4xl font-bold">大阪府公立高校入試制度 完全ガイド</h1>
-        <p class="mt-2 text-lg text-[#CAF0F8]">ビジュアル解説</p>
-        <!-- ナビゲーションメニュー -->
-        <nav class="mt-4">
-            <ul class="flex flex-wrap justify-center gap-2 md:gap-4 text-xs sm:text-sm md:text-base">
-                <li><a href="#overview" class="nav-link">全体像</a></li>
-                <li><a href="#naishin" class="nav-link">内申点</a></li>
-                <li><a href="#naishin-calculation" class="nav-link">内申点計算</a></li>
-                <li><a href="#test-types" class="nav-link">学力検査</a></li>
-                <li><a href="#school-data-list" class="nav-link">高槻エリア高校</a></li>
-                <li><a href="#school-locations" class="nav-link">高校所在地</a></li>
-                <li><a href="#ai-assistant" class="nav-link">進路AIアシスタント</a></li>
-                <li><a href="#exam-details" class="nav-link">問題対策</a></li>
-                <li><a href="#curriculum-overview" class="nav-link">単元概要</a></li>
-                <li><a href="#application-flow" class="nav-link">出願の流れ</a></li>
-                <li><a href="#schedule" class="nav-link">入試日程</a></li>
-                <li><a href="#itsuki-moshi" class="nav-link">五ツ木模試</a></li>
-                <li><a href="#shiritsu" class="nav-link">私立併願</a></li>
-                <li><a href="#faq" class="nav-link">FAQ</a></li>
-            </ul>
-        </nav>
+    <header class="bg-[#03045E] text-white p-6 shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto">
+            <!-- Desktop Title and Tagline (visible only on desktop) -->
+            <div class="hidden md:block text-center mb-4">
+                <h1 class="text-3xl md:text-4xl font-bold">大阪府公立高校入試制度 完全ガイド</h1>
+                <p class="mt-2 text-lg text-[#CAF0F8]">ビジュアル解説</p>
+            </div>
+
+            <!-- Mobile Header Row (visible only on mobile) -->
+            <div class="md:hidden flex justify-between items-center">
+                <h1 class="text-xl font-bold">大阪府公立高校入試制度 完全ガイド</h1>
+                <button id="nav-toggle" class="nav-toggle p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-white">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Navigation Menu (responsive display) -->
+            <nav id="main-nav" class="nav-menu mt-4">
+                <ul class="flex flex-wrap justify-center gap-2 md:gap-4 text-xs sm:text-sm md:text-base">
+                    <li><a href="#overview" class="nav-link">全体像</a></li>
+                    <li><a href="#naishin" class="nav-link">内申点</a></li>
+                    <li><a href="#naishin-calculation" class="nav-link">内申点計算</a></li>
+                    <li><a href="#test-types" class="nav-link">学力検査</a></li>
+                    <li><a href="#school-data-list" class="nav-link">高槻エリア高校</a></li>
+                    <li><a href="#school-locations" class="nav-link">高校所在地</a></li>
+                    <li><a href="#exam-details" class="nav-link">問題対策</a></li>
+                    <li><a href="#curriculum-overview" class="nav-link">単元概要</a></li>
+                    <li><a href="#application-flow" class="nav-link">出願の流れ</a></li>
+                    <li><a href="#schedule" class="nav-link">入試日程</a></li>
+                    <li><a href="#itsuki-moshi" class="nav-link">五ツ木模試</a></li>
+                    <li><a href="#shiritsu" class="nav-link">私立併願</a></li>
+                    <li><a href="#faq" class="nav-link">FAQ</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
     <!-- メインコンテンツ -->
@@ -463,31 +521,7 @@
             </div>
         </section>
 
-        <!-- 進路指導AIアシスタントセクション (移動) -->
-        <section id="ai-assistant" class="mb-12 scroll-mt-[6.5rem]">
-            <div class="card p-6 md:p-8">
-                <h2 class="text-2xl font-bold section-title pb-2 mb-4">進路指導AIアシスタント</h2>
-                <p class="text-base md:text-lg mb-6">あなたの希望に合わせて、AIがおすすめの高校を提案します。通学時間やその他の希望条件を入力してください。</p>
-                
-                <div class="space-y-4">
-                    <div>
-                        <label for="travelTimeInput" class="block text-sm font-medium text-gray-700">希望の通学時間 (分以内):</label>
-                        <input type="number" id="travelTimeInput" class="mt-1 block w-full md:w-1/2 rounded-md border-gray-300 shadow-sm focus:border-[#0077B6] focus:ring focus:ring-[#0077B6] focus:ring-opacity-50 p-2" placeholder="例: 30">
-                    </div>
-                    <div>
-                        <label for="otherConditionsInput" class="block text-sm font-medium text-gray-700">その他の希望条件 (複数入力可):</label>
-                        <textarea id="otherConditionsInput" class="mt-1 block w-full md:w-2/3 rounded-md border-gray-300 shadow-sm focus:border-[#0077B6] focus:ring focus:ring-[#0077B6] focus:ring-opacity=50 p-2 h-24" placeholder="例: 剣道部がある学校、女子が多い学校、理系に強い学校、新しい校舎、駅から近い、留学制度がある、指定校推薦が多い"></textarea>
-                    </div>
-                    <button id="generateGuidanceBtn" class="bg-[#0077B6] hover:bg-[#00B4D8] text-white font-bold py-2 px-4 rounded-lg shadow-md transition duration-300 ease-in-out" onclick="generateGuidance()">
-                        <span id="buttonText">アシスタントに相談</span>
-                        <span id="loadingSpinner" class="hidden ml-2">🔄</span>
-                    </button>
-                    <div id="guidanceOutput" class="mt-4 p-4 bg-gray-50 border border-gray-200 rounded-lg hidden">
-                        <p class="text-sm text-gray-600">AIからの提案をここに表示します。</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <!-- 削除: 進路指導AIアシスタントセクション -->
 
         <!-- 学力検査：各問題タイプ別対策の深掘りセクション -->
         <section id="exam-details" class="mb-12 scroll-mt-[6.5rem]">
@@ -632,7 +666,7 @@
                                 <li><strong>文法</strong>: 品詞、文の成分 (★★★☆☆)</li>
                                 <li><strong>作文</strong>: 構成、表現 (★★★☆☆)</li>
                             </ul>
-                            <button id="btn-kokugo-grade1" class="mt-4 bg-[#00B4D8] hover:bg-[#0077B6] text-white font-bold py-2 px-4 rounded-lg shadow-md transition duration-300 ease-in-out text-sm" onclick="generateStudyTips('国語', '中学1年生', 'btn-kokugo-grade1', 'tips-kokugo-grade1')">
+                            <button id="btn-kokugo-grade1" class="mt-4 bg-[#00B4D8] hover:bg-[#0077B6] text-white font-bold py-2 px-4 rounded-lg shadow-md transition duration-300 ease-in-out text-sm" onclick="showNoAssistantMessage('tips-kokugo-grade1')">
                                 ✨ 合格へのヒント
                             </button>
                             <div id="tips-kokugo-grade1" class="mt-4 p-3 bg-white border border-gray-200 rounded-lg hidden">
@@ -645,7 +679,7 @@
                                 <li><strong>文字と式</strong>: 文字式の計算、式の値、数量の関係を式で表現 (★★★★☆)</li>
                                 <li><strong>方程式</strong>: 一次方程式の解き方、応用問題 (★★★★☆)</li>
                             </ul>
-                            <button id="btn-sugaku-grade1" class="mt-4 bg-[#00B4D8] hover:bg-[#0077B6] text-white font-bold py-2 px-4 rounded-lg shadow-md transition duration-300 ease-in-out text-sm" onclick="generateStudyTips('数学', '中学1年生', 'btn-sugaku-grade1', 'tips-sugaku-grade1')">
+                            <button id="btn-sugaku-grade1" class="mt-4 bg-[#00B4D8] hover:bg-[#0077B6] text-white font-bold py-2 px-4 rounded-lg shadow-md transition duration-300 ease-in-out text-sm" onclick="showNoAssistantMessage('tips-sugaku-grade1')">
                                 ✨ 合格へのヒント
                             </button>
                             <div id="tips-sugaku-grade1" class="mt-4 p-3 bg-white border border-gray-200 rounded-lg hidden">
@@ -674,7 +708,7 @@
                                 <li><strong>大地の変化</strong>: 地震、火山、岩石 (★★☆☆☆)</li>
                                 <li><strong>身近な生物の観察</strong>: 顕微鏡、スケッチ (★★☆☆☆)</li>
                             </ul>
-                            <button id="btn-rika-grade1" class="mt-4 bg-[#00B4D8] hover:bg-[#0077B6] text-white font-bold py-2 px-4 rounded-lg shadow-md transition duration-300 ease-in-out text-sm" onclick="generateStudyTips('理科', '中学1年生', 'btn-rika-grade1', 'tips-rika-grade1')">
+                            <button id="btn-rika-grade1" class="mt-4 bg-[#00B4D8] hover:bg-[#0077B6] text-white font-bold py-2 px-4 rounded-lg shadow-md transition duration-300 ease-in-out text-sm" onclick="showNoAssistantMessage('tips-rika-grade1')">
                                 ✨ 合格へのヒント
                             </button>
                             <div id="tips-rika-grade1" class="mt-4 p-3 bg-white border border-gray-200 rounded-lg hidden">
@@ -686,7 +720,7 @@
                                 <li><strong>世界の様々な地域</strong>: 気候、地形、産業、文化 (★★★☆☆)</li>
                                 <li><strong>日本の様々な地域</strong>: 地形、産業、人口 (★★★☆☆)</li>
                             </ul>
-                            <button id="btn-shakai-grade1" class="mt-4 bg-[#00B4D8] hover:bg-[#0077B6] text-white font-bold py-2 px-4 rounded-lg shadow-md transition duration-300 ease-in-out text-sm" onclick="generateStudyTips('社会', '中学1年生', 'btn-shakai-grade1', 'tips-shakai-grade1')">
+                            <button id="btn-shakai-grade1" class="mt-4 bg-[#00B4D8] hover:bg-[#0077B6] text-white font-bold py-2 px-4 rounded-lg shadow-md transition duration-300 ease-in-out text-sm" onclick="showNoAssistantMessage('tips-shakai-grade1')">
                                 ✨ 合格へのヒント
                             </button>
                             <div id="tips-shakai-grade1" class="mt-4 p-3 bg-white border border-gray-200 rounded-lg hidden">
@@ -705,7 +739,7 @@
                                 <li><strong>時制</strong>: 現在進行形 (★★★★☆)</li>
                                 <li><strong>基本語彙・表現</strong>: アルファベット、あいさつ、自己紹介、簡単な疑問詞 (★★★★☆)</li>
                             </ul>
-                            <button id="btn-eigo-grade1" class="mt-4 bg-[#00B4D8] hover:bg-[#0077B6] text-white font-bold py-2 px-4 rounded-lg shadow-md transition duration-300 ease-in-out text-sm" onclick="generateStudyTips('英語', '中学1年生', 'btn-eigo-grade1', 'tips-eigo-grade1')">
+                            <button id="btn-eigo-grade1" class="mt-4 bg-[#00B4D8] hover:bg-[#0077B6] text-white font-bold py-2 px-4 rounded-lg shadow-md transition duration-300 ease-in-out text-sm" onclick="showNoAssistantMessage('tips-eigo-grade1')">
                                 ✨ 合格へのヒント
                             </button>
                             <div id="tips-eigo-grade1" class="mt-4 p-3 bg-white border border-gray-200 rounded-lg hidden">
@@ -728,7 +762,7 @@
                                 <li><strong>文法</strong>: 動詞・形容詞の活用、助動詞・助詞 (★★★☆☆)</li>
                                 <li><strong>作文</strong>: 意見文、構成 (★★★☆☆)</li>
                             </ul>
-                            <button id="btn-kokugo-grade2" class="mt-4 bg-[#00B4D8] hover:bg-[#0077B6] text-white font-bold py-2 px-4 rounded-lg shadow-md transition duration-300 ease-in-out text-sm" onclick="generateStudyTips('国語', '中学2年生', 'btn-kokugo-grade2', 'tips-kokugo-grade2')">
+                            <button id="btn-kokugo-grade2" class="mt-4 bg-[#00B4D8] hover:bg-[#0077B6] text-white font-bold py-2 px-4 rounded-lg shadow-md transition duration-300 ease-in-out text-sm" onclick="showNoAssistantMessage('tips-kokugo-grade2')">
                                 ✨ 合格へのヒント
                             </button>
                             <div id="tips-kokugo-grade2" class="mt-4 p-3 bg-white border border-gray-200 rounded-lg hidden">
@@ -740,7 +774,7 @@
                                 <li><strong>式の計算</strong>: 多項式の加減乗除、分配法則、指数法則 (★★★★★)</li>
                                 <li><strong>連立方程式</strong>: 解き方（加減法・代入法）、応用問題 (★★★★★)</li>
                             </ul>
-                            <button id="btn-sugaku-grade2" class="mt-4 bg-[#00B4D8] hover:bg-[#0077B6] text-white font-bold py-2 px-4 rounded-lg shadow-md transition duration-300 ease-in-out text-sm" onclick="generateStudyTips('数学', '中学2年生', 'btn-sugaku-grade2', 'tips-sugaku-grade2')">
+                            <button id="btn-sugaku-grade2" class="mt-4 bg-[#00B4D8] hover:bg-[#0077B6] text-white font-bold py-2 px-4 rounded-lg shadow-md transition duration-300 ease-in-out text-sm" onclick="showNoAssistantMessage('tips-sugaku-grade2')">
                                 ✨ 合格へのヒント
                             </button>
                             <div id="tips-sugaku-grade2" class="mt-4 p-3 bg-white border border-gray-200 rounded-lg hidden">
@@ -770,7 +804,7 @@
                                 <li><strong>気象</strong>: 気圧、風、雲、天気 (★★★☆☆)</li>
                                 <li><strong>地震と火山</strong>: 地震の揺れ、火山活動 (★★★☆☆)</li>
                             </ul>
-                            <button id="btn-rika-grade2" class="mt-4 bg-[#00B4D8] hover:bg-[#0077B6] text-white font-bold py-2 px-4 rounded-lg shadow-md transition duration-300 ease-in-out text-sm" onclick="generateStudyTips('理科', '中学2年生', 'btn-rika-grade2', 'tips-rika-grade2')">
+                            <button id="btn-rika-grade2" class="mt-4 bg-[#00B4D8] hover:bg-[#0077B6] text-white font-bold py-2 px-4 rounded-lg shadow-md transition duration-300 ease-in-out text-sm" onclick="showNoAssistantMessage('tips-rika-grade2')">
                                 ✨ 合格へのヒント
                             </button>
                             <div id="tips-rika-grade2" class="mt-4 p-3 bg-white border border-gray-200 rounded-lg hidden">
@@ -782,7 +816,7 @@
                                 <li><strong>世界と日本の地域差</strong>: 産業構造、貿易、交通 (★★★★☆)</li>
                                 <li><strong>世界の諸問題</strong>: 環境問題、貧困、紛争 (★★★☆☆)</li>
                             </ul>
-                            <button id="btn-shakai-grade2" class="mt-4 bg-[#00B4D8] hover:bg-[#0077B6] text-white font-bold py-2 px-4 rounded-lg shadow-md transition duration-300 ease-in-out text-sm" onclick="generateStudyTips('社会', '中学2年生', 'btn-shakai-grade2', 'tips-shakai-grade2')">
+                            <button id="btn-shakai-grade2" class="mt-4 bg-[#00B4D8] hover:bg-[#0077B6] text-white font-bold py-2 px-4 rounded-lg shadow-md transition duration-300 ease-in-out text-sm" onclick="showNoAssistantMessage('tips-shakai-grade2')">
                                 ✨ 合格へのヒント
                             </button>
                             <div id="tips-shakai-grade2" class="mt-4 p-3 bg-white border border-gray-200 rounded-lg hidden">
@@ -800,9 +834,9 @@
                                 <li><strong>助動詞:</strong> must, should, have to, may, might, could (★★★★☆)</li>
                                 <li><strong>動詞の形:</strong> 不定詞 (名詞・形容詞・副詞的用法)、動名詞 (★★★★★)</li>
                                 <li><strong>受動態:</b> be動詞 + 過去分詞、byを使った表現 (★★★★★)</li>
-                                <li><strong>接続詞:</strong> 時・条件・理由・目的を表す接続詞 (★★★★☆)</li>
+                                <li><strong>接続詞:</b> 時・条件・理由・目的を表す接続詞 (★★★★☆)</li>
                             </ul>
-                            <button id="btn-eigo-grade2" class="mt-4 bg-[#00B4D8] hover:bg-[#0077B6] text-white font-bold py-2 px-4 rounded-lg shadow-md transition duration-300 ease-in-out text-sm" onclick="generateStudyTips('英語', '中学2年生', 'btn-eigo-grade2', 'tips-eigo-grade2')">
+                            <button id="btn-eigo-grade2" class="mt-4 bg-[#00B4D8] hover:bg-[#0077B6] text-white font-bold py-2 px-4 rounded-lg shadow-md transition duration-300 ease-in-out text-sm" onclick="showNoAssistantMessage('tips-eigo-grade2')">
                                 ✨ 合格へのヒント
                             </button>
                             <div id="tips-eigo-grade2" class="mt-4 p-3 bg-white border border-gray-200 rounded-lg hidden">
@@ -824,7 +858,7 @@
                                 <li><strong>漢字・語句</strong>: 難易度高めの熟語、慣用句 (★★★★☆)</li>
                                 <li><strong>作文</strong>: 小論文、意見主張 (★★★★★)</li>
                             </ul>
-                            <button id="btn-kokugo-grade3" class="mt-4 bg-[#00B4D8] hover:bg-[#0077B6] text-white font-bold py-2 px-4 rounded-lg shadow-md transition duration-300 ease-in-out text-sm" onclick="generateStudyTips('国語', '中学3年生', 'btn-kokugo-grade3', 'tips-kokugo-grade3')">
+                            <button id="btn-kokugo-grade3" class="mt-4 bg-[#00B4D8] hover:bg-[#0077B6] text-white font-bold py-2 px-4 rounded-lg shadow-md transition duration-300 ease-in-out text-sm" onclick="showNoAssistantMessage('tips-kokugo-grade3')">
                                 ✨ 合格へのヒント
                             </button>
                             <div id="tips-kokugo-grade3" class="mt-4 p-3 bg-white border border-gray-200 rounded-lg hidden">
@@ -837,7 +871,7 @@
                                 <li><strong>平方根</strong>: 計算、有理化、近似値 (★★★★★)</li>
                                 <li><strong>二次方程式</strong>: 解き方（解の公式、因数分解）、応用問題 (★★★★★)</li>
                             </ul>
-                            <button id="btn-sugaku-grade3" class="mt-4 bg-[#00B4D8] hover:bg-[#0077B6] text-white font-bold py-2 px-4 rounded-lg shadow-md transition duration-300 ease-in-out text-sm" onclick="generateStudyTips('数学', '中学3年生', 'btn-sugaku-grade3', 'tips-sugaku-grade3')">
+                            <button id="btn-sugaku-grade3" class="mt-4 bg-[#00B4D8] hover:bg-[#0077B6] text-white font-bold py-2 px-4 rounded-lg shadow-md transition duration-300 ease-in-out text-sm" onclick="showNoAssistantMessage('tips-sugaku-grade3')">
                                 ✨ 合格へのヒント
                             </button>
                             <div id="tips-sugaku-grade3" class="mt-4 p-3 bg-white border border-gray-200 rounded-lg hidden">
@@ -867,7 +901,7 @@
                                 <li><strong>地球と宇宙</strong>: 天体の動き、太陽系、恒星 (★★★★☆)</li>
                                 <li><strong>生命の連続性</strong>: 生態系、環境保全 (★★★☆☆)</li>
                             </ul>
-                            <button id="btn-rika-grade3" class="mt-4 bg-[#00B4D8] hover:bg-[#0077B6] text-white font-bold py-2 px-4 rounded-lg shadow-md transition duration-300 ease-in-out text-sm" onclick="generateStudyTips('理科', '中学3年生', 'btn-rika-grade3', 'tips-rika-grade3')">
+                            <button id="btn-rika-grade3" class="mt-4 bg-[#00B4D8] hover:bg-[#0077B6] text-white font-bold py-2 px-4 rounded-lg shadow-md transition duration-300 ease-in-out text-sm" onclick="showNoAssistantMessage('tips-rika-grade3')">
                                 ✨ 合格へのヒント
                             </button>
                             <div id="tips-rika-grade3" class="mt-4 p-3 bg-white border border-gray-200 rounded-lg hidden">
@@ -878,7 +912,7 @@
                             <ul class="list-disc list-inside text-sm space-y-1 ml-4">
                                 <li><strong>地理総合</strong>: 地域の特色、世界の諸地域（現代の課題と関連） (★★★★☆)</li>
                             </ul>
-                            <button id="btn-shakai-grade3" class="mt-4 bg-[#00B4D8] hover:bg-[#0077B6] text-white font-bold py-2 px-4 rounded-lg shadow-md transition duration-300 ease-in-out text-sm" onclick="generateStudyTips('社会', '中学3年生', 'btn-shakai-grade3', 'tips-shakai-grade3')">
+                            <button id="btn-shakai-grade3" class="mt-4 bg-[#00B4D8] hover:bg-[#0077B6] text-white font-bold py-2 px-4 rounded-lg shadow-md transition duration-300 ease-in-out text-sm" onclick="showNoAssistantMessage('tips-shakai-grade3')">
                                 ✨ 合格へのヒント
                             </button>
                             <div id="tips-shakai-grade3" class="mt-4 p-3 bg-white border border-gray-200 rounded-lg hidden">
@@ -904,7 +938,7 @@
                                 <li><strong>話法</strong>: 間接話法 (★★★★☆)</li>
                                 <li><strong>動詞の形:</strong> 原型不定詞、不定詞の応用 (too ~ to..., ~ enough to...) (★★★★☆)</li>
                             </ul>
-                            <button id="btn-eigo-grade3" class="mt-4 bg-[#00B4D8] hover:bg-[#0077B6] text-white font-bold py-2 px-4 rounded-lg shadow-md transition duration-300 ease-in-out text-sm" onclick="generateStudyTips('英語', '中学3年生', 'btn-eigo-grade3', 'tips-eigo-grade3')">
+                            <button id="btn-eigo-grade3" class="mt-4 bg-[#00B4D8] hover:bg-[#0077B6] text-white font-bold py-2 px-4 rounded-lg shadow-md transition duration-300 ease-in-out text-sm" onclick="showNoAssistantMessage('tips-eigo-grade3')">
                                 ✨ 合格へのヒント
                             </button>
                             <div id="tips-eigo-grade3" class="mt-4 p-3 bg-white border border-gray-200 rounded-lg hidden">
@@ -1152,7 +1186,7 @@
                              <h4 class="font-bold text-[#03045E]">金光大阪高等学校</h4>
                              <p class="text-sm mt-1">着実にステップアップできる5つのコースを展開しています。</p>
                              <ul class="list-disc list-inside text-sm ml-4 mt-2">
-                                 <li><strong class="font-semibold">特進Iコース:</strong> 国公立・難関私立大学の現役合格を目標とする最上位コース。授業内容全てが受験対策につながるカリキュラム。<strong class="font-semibold">(偏差値: 58)</strong></li>
+                                 <li><strong class="font-semibold">特進Iコース:</strong> 国公立・難関私立大学の現役合格を目標とする最上位コース。授業内容全てが受験対策につながるカリキュラム.<strong class="font-semibold">(偏差値: 58)</strong></li>
                                  <li><strong class="font-semibold">特進IIコース:</b> 難関私立大学の現役合格を目標。2年次から文系3教科（国・英・社）の強化に注力し、志望校に応じた科目を選択.<strong class="font-semibold">(偏差値: 52)</strong></li>
                                  <li><strong class="font-semibold">進学コース:</b> 有名私立大学の現役合格を目標。基礎学力の確立と、様々な大学入試スタイルに対応したカリキュラム.<strong class="font-semibold">(偏差値: 45)</strong></li>
                                  <li><strong class="font-semibold">理系コース (2年次より):</strong> 理系科目に重点を置き、国公私立大学の理系学部への現役合格を目指す。</li>
@@ -1201,7 +1235,7 @@
                              <ul class="list-disc list-inside text-sm ml-4 mt-2">
                                  <li><strong class="font-semibold">選抜特進コース:</strong> 難関国公立・私立大学を目指すコース。<strong class="font-semibold">(偏差値: 61-62)</strong></li>
                                  <li><strong class="font-semibold">プログレスコース:</strong> 龍谷大学進学を目指すコース.<strong class="font-semibold">(偏差値: 53-54)</strong></li>
-                                 <li><strong class="font-semibold">アスリートコース:</strong> スポーツ活動に力を入れながら、大学進学を目指すコース。<strong class="font-semibold">(偏差値: 42-43)</strong></li>
+                                 <li><strong class="font-semibold">アスリートコース:</strong> スポーツ活動に力を入れながら、大学進学を目指すコース。<strong class="font-semibold">(偏差値: 42-43)</li>
                              </ul>
                          </div>
                      </div>
@@ -1273,14 +1307,14 @@
     <script>
         // 色の定義 (Vibrant Blues)
         const vibrantBlues = {
-            primary: '#03045E',     // 濃いインディゴブルー
-            secondary: '#0077B6',    // ミディアムブルー
-            tertiary: '#00B4D8',     // ライトブルー
-            lightBlue: '#90E0EF',    // 非常に明るいブルー
-            lighterBlue: '#CAF0F8'   // ほぼ白に近いブルー
+            primary: '#03045E',     // Dark indigo blue
+            secondary: '#0077B6',    // Medium blue
+            tertiary: '#00B4D8',     // Light blue
+            lightBlue: '#90E0EF',    // Very light blue
+            lighterBlue: '#CAF0F8'   // Almost white blue
         };
 
-        // 長いラベルを複数行に分割する関数 (Chart.jsのツールチップ用)
+        // Function to wrap long labels into multiple lines (for Chart.js tooltips)
         const wrapLabel = (label, maxLength = 16) => {
             if (typeof label !== 'string' || label.length <= maxLength) {
                 return label;
@@ -1302,7 +1336,7 @@
             return lines;
         };
 
-        // ツールチップのタイトルコールバック関数
+        // Tooltip title callback function
         const tooltipTitleCallback = (tooltipItems) => {
             const item = tooltipItems[0];
             let label = item.chart.data.labels[item.dataIndex];
@@ -1312,69 +1346,69 @@
             return label;
         };
 
-        // Chart.jsの共通オプション
+        // Common options for Chart.js
         const commonChartOptions = {
-            responsive: true,           // レスポンシブ対応
-            maintainAspectRatio: false, // アスペクト比を維持しない
+            responsive: true,           // Responsive
+            maintainAspectRatio: false, // Do not maintain aspect ratio
             plugins: {
                 legend: {
                     labels: {
-                        color: vibrantBlues.primary, // 凡例のテキスト色
+                        color: vibrantBlues.primary, // Legend text color
                         font: {
-                            size: 14 // 凡例のフォントサイズ
+                            size: 14 // Legend font size
                         }
                     }
                 },
                 tooltip: {
-                    enabled: true,                  // ツールチップを有効にする
-                    mode: 'index',                  // インデックスモード（同じX軸の全てのデータポイントを表示）
-                    intersect: false,               // マウスカーソルがデータポイントと交差していなくても表示
-                    backgroundColor: 'rgba(3, 4, 94, 0.9)', // ツールチップの背景色
-                    titleColor: '#FFFFFF',          // ツールチップのタイトル色
-                    bodyColor: '#FFFFFF',           // ツールチップの本文色
-                    borderColor: vibrantBlues.tertiary, // ツールチップのボーダー色
-                    borderWidth: 1,                 // ツールチップのボーダー幅
+                    enabled: true,                  // Enable tooltips
+                    mode: 'index',                  // Index mode (show all data points on the same X-axis)
+                    intersect: false,               // Show even if mouse cursor does not intersect data point
+                    backgroundColor: 'rgba(3, 4, 94, 0.9)', // Tooltip background color
+                    titleColor: '#FFFFFF',          // Tooltip title color
+                    bodyColor: '#FFFFFF',           // Tooltip body color
+                    borderColor: vibrantBlues.tertiary, // Tooltip border color
+                    borderWidth: 1,                 // Tooltip border width
                     callbacks: {
-                        title: tooltipTitleCallback // ツールチップのタイトルコールバック
+                        title: tooltipTitleCallback // Tooltip title callback
                     }
                 }
             },
         };
         
-        // 内申点チャートの描画
+        // Draw the internal score chart
         const naishinCtx = document.getElementById('naishinChart');
         if (naishinCtx) {
             new Chart(naishinCtx, {
-                type: 'doughnut', // ドーナツチャート
+                type: 'doughnut', // Doughnut chart
                 data: {
-                    labels: ['中学1年生', '中学2年生', '中学3年生'], // ラベル
+                    labels: ['中学1年生', '中学2年生', '中学3年生'], // Labels
                     datasets: [{
-                        label: '内申点評定の比重', // データセットのラベル
-                        data: [2, 2, 6], // データ (比重を2:2:6に変更)
-                        backgroundColor: [ // 背景色
+                        label: '内申点評定の比重', // Dataset label
+                        data: [2, 2, 6], // Data (ratio changed to 2:2:6)
+                        backgroundColor: [ // Background colors
                             vibrantBlues.lightBlue,
                             vibrantBlues.tertiary,
                             vibrantBlues.secondary
                         ],
-                        borderColor: '#ffffff', // ボーダー色
-                        borderWidth: 4,       // ボーダー幅
-                        hoverOffset: 4        // ホバー時のオフセット
+                        borderColor: '#ffffff', // Border color
+                        borderWidth: 4,       // Border width
+                        hoverOffset: 4        // Hover offset
                     }]
                 },
                 options: {
-                    ...commonChartOptions, // 共通オプションを適用
+                    ...commonChartOptions, // Apply common options
                     plugins: {
                        ...commonChartOptions.plugins,
                        legend: {
-                           position: 'bottom', // 凡例の位置
+                           position: 'bottom', // Legend position
                            labels: {
                                color: vibrantBlues.primary,
                                font: { size: 14 }
                            }
                        },
                        title: {
-                           display: true, // タイトル表示
-                           text: '内申点 学年別評価比重', // タイトルテキスト
+                           display: true, // Display title
+                           text: '内申点 学年別評価比重', // Title text
                            color: vibrantBlues.primary,
                            font: { size: 16, weight: 'bold' }
                        }
@@ -1383,51 +1417,51 @@
             });
         }
         
-        // 比重タイプチャートの描画
+        // Draw the weight type chart
         const weightTypeCtx = document.getElementById('weightTypeChart');
         if (weightTypeCtx) {
             new Chart(weightTypeCtx, {
-                type: 'bar', // 棒グラフ
+                type: 'bar', // Bar chart
                 data: {
-                    labels: ['Ⅰ(7:3)', 'Ⅱ(6:4)', 'Ⅲ(5:5)', 'Ⅳ(4:6)', 'Ⅴ(3:7)'], // ラベル
+                    labels: ['Ⅰ(7:3)', 'Ⅱ(6:4)', 'Ⅲ(5:5)', 'Ⅳ(4:6)', 'Ⅴ(3:7)'], // Labels
                     datasets: [
                         {
-                            label: '学力検査', // データセットのラベル
-                            data: [630, 540, 450, 360, 270], // データ
-                            backgroundColor: vibrantBlues.secondary, // 背景色
-                            borderColor: vibrantBlues.primary,    // ボーダー色
-                            borderWidth: 1                        // ボーダー幅
+                            label: '学力検査', // Dataset label
+                            data: [630, 540, 450, 360, 270], // Data
+                            backgroundColor: vibrantBlues.secondary, // Background color
+                            borderColor: vibrantBlues.primary,    // Border color
+                            borderWidth: 1                        // Border width
                         },
                         {
-                            label: '調査書', // データセットのラベル
-                            data: [270, 360, 450, 540, 630], // データ
-                            backgroundColor: vibrantBlues.lightBlue, // 背景色
-                            borderColor: vibrantBlues.tertiary,    // ボーダー色
-                            borderWidth: 1                         // ボーダー幅
+                            label: '調査書', // Dataset label
+                            data: [270, 360, 450, 540, 630], // Data
+                            backgroundColor: vibrantBlues.lightBlue, // Background color
+                            borderColor: vibrantBlues.tertiary,    // Border color
+                            borderWidth: 1                         // Border width
                         }
                     ]
                 },
                 options: {
-                    ...commonChartOptions, // 共通オプションを適用
+                    ...commonChartOptions, // Apply common options
                     scales: {
                         y: {
-                            beginAtZero: true, // Y軸を0から開始
-                            stacked: false,    // スタックしない
-                            grid: { color: '#e0e0e0' }, // グリッド線の色
-                            ticks: { color: vibrantBlues.primary } // 目盛りのテキスト色
+                            beginAtZero: true, // Start Y-axis from zero
+                            stacked: false,    // Do not stack
+                            grid: { color: '#e0e0e0' }, // Grid line color
+                            ticks: { color: vibrantBlues.primary } // Tick text color
                         },
                         x: {
-                           grid: { display: false }, // グリッド線非表示
-                           ticks: { color: vibrantBlues.primary } // 目盛りのテキスト色
+                           grid: { display: false }, // Hide grid lines
+                           ticks: { color: vibrantBlues.primary } // Tick text color
                         }
                     },
                      plugins: {
                         ...commonChartOptions.plugins,
                         title: {
-                           display: false // タイトル非表示
+                           display: false // Hide title
                         },
                         legend: {
-                           position: 'bottom', // 凡例の位置
+                           position: 'bottom', // Legend position
                         }
                     }
                 }
@@ -1437,53 +1471,53 @@
         const eikenCtx = document.getElementById('eikenChart');
         if (eikenCtx) {
             new Chart(eikenCtx, {
-                type: 'bar', // 棒グラフ
+                type: 'bar', // Bar chart
                 data: {
-                    labels: ['英検® 2級', ['英検® 準1級', '以上']], // ラベル (複数行ラベルも考慮)
+                    labels: ['英検® 2級', ['英検® 準1級', '以上']], // Labels (considering multi-line labels)
                     datasets: [{
-                        label: '保障点数 (一般選抜/90点満点)', // データセットのラベル
-                        data: [72, 90], // データ
-                        backgroundColor: [vibrantBlues.secondary, vibrantBlues.primary], // 背景色
-                        borderColor: [vibrantBlues.tertiary, vibrantBlues.secondary], // ボーダー色
-                        borderWidth: 2, // ボーダー幅
-                        barPercentage: 0.6, // 棒の幅
+                        label: '保障点数 (一般選抜/90点満点)', // Dataset label
+                        data: [72, 90], // Data
+                        backgroundColor: [vibrantBlues.secondary, vibrantBlues.primary], // Background color
+                        borderColor: [vibrantBlues.tertiary, vibrantBlues.secondary], // Border color
+                        borderWidth: 2, // Border width
+                        barPercentage: 0.6, // Bar width
                     }]
                 },
                 options: {
-                    ...commonChartOptions, // 共通オプションを適用
-                    indexAxis: 'y', // 横棒グラフ
+                    ...commonChartOptions, // Apply common options
+                    indexAxis: 'y', // Horizontal bar chart
                      scales: {
                         x: {
-                            beginAtZero: true, // X軸を0から開始
-                            max: 90,           // X軸の最大値
-                            grid: { color: '#e0e0e0' }, // グリッド線の色
-                            ticks: { color: vibrantBlues.primary } // 目盛りのテキスト色
+                            beginAtZero: true, // Start X-axis from zero
+                            max: 90,           // Maximum X-axis value
+                            grid: { color: '#e0e0e0' }, // Grid line color
+                            ticks: { color: vibrantBlues.primary } // Tick text color
                         },
                         y: {
-                           grid: { display: false }, // グリッド線非表示
-                           ticks: { color: vibrantBlues.primary, font: {size: 14} } // 目盛りのテキスト色とフォントサイズ
+                           grid: { display: false }, // Hide grid lines
+                           ticks: { color: vibrantBlues.primary, font: {size: 14} } // Tick text color and font size
                         }
                     },
                     plugins: {
                         ...commonChartOptions.plugins,
-                        legend: { display: false }, // 凡例非表示
+                        legend: { display: false }, // Hide legend
                         title: {
-                            display: true, // タイトル表示
-                            text: '英語資格による保障点 (一般選抜)', // タイトルテキスト
+                            display: true, // Display title
+                            text: '英語資格による保障点 (一般選抜)', // Title text
                             color: vibrantBlues.primary,
                             font: { size: 16, weight: 'bold' }
                         },
                         tooltip: {
                            ...commonChartOptions.plugins.tooltip,
                            callbacks: {
-                               title: tooltipTitleCallback, // ツールチップのタイトルコールバック
+                               title: tooltipTitleCallback, // Tooltip title callback
                                label: function(context) {
                                    let label = context.dataset.label || '';
                                    if (label) {
                                        label += ': ';
                                    }
                                    if (context.parsed.x !== null) {
-                                       label += context.parsed.x + '点保障'; // ツールチップのラベル表示
+                                       label += context.parsed.x + '点保障'; // Tooltip label display
                                    }
                                    return label;
                                }
@@ -1494,246 +1528,66 @@
             });
         }
 
-        // タブ切り替え機能
+        // Tab switching function
         function openGrade(evt, gradeName) {
-            // すべてのタブコンテンツを非表示にする
+            // Hide all tab content
             var i, tabcontent, tablinks;
             tabcontent = document.getElementsByClassName("tab-content");
             for (i = 0; i < tabcontent.length; i++) {
                 tabcontent[i].classList.remove("active");
             }
 
-            // すべてのタブボタンから active クラスを削除する
+            // Remove active class from all tab buttons
             tablinks = document.getElementsByClassName("tab-button");
             for (i = 0; i < tablinks.length; i++) {
                 tablinks[i].classList.remove("active");
             }
 
-            // 特定のタブコンテンツを表示し、ボタンを active にする
+            // Display the specific tab content and activate the button
             document.getElementById(gradeName).classList.add("active");
             evt.currentTarget.classList.add("active");
         }
 
-        // ページロード時に最初のタブをアクティブにする
+        // Activate the first tab on page load
         document.addEventListener('DOMContentLoaded', (event) => {
-            // 初期表示として中学1年生のタブをアクティブにする
+            // Activate the 1st grade tab by default
             document.querySelector('.tab-button').click();
+
+            // Mobile navigation toggle
+            const navToggle = document.getElementById('nav-toggle');
+            const mainNav = document.getElementById('main-nav');
+            if (navToggle && mainNav) {
+                navToggle.addEventListener('click', () => {
+                    mainNav.classList.toggle('active');
+                });
+
+                // Close menu when a link is clicked (for smooth scrolling)
+                const navLinks = mainNav.querySelectorAll('.nav-link');
+                navLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        if (mainNav.classList.contains('active')) {
+                            mainNav.classList.remove('active');
+                        }
+                    });
+                });
+            }
         });
 
         /**
-         * Gemini APIを使用して学習ヒントを生成し、表示する関数
-         * @param {string} subject 科目名（例: '国語'）
-         * @param {string} grade 学年（例: '中学1年生'）
-         * @param {string} buttonId ボタンのHTML ID
-         * @param {string} tipsAreaId ヒント表示エリアのHTML ID
+         * Function to display a message indicating that the AI assistant feature has been removed
+         * @param {string} tipsAreaId HTML ID of the tips display area
          */
-        async function generateStudyTips(subject, grade, buttonId, tipsAreaId) {
-            const button = document.getElementById(buttonId);
+        function showNoAssistantMessage(tipsAreaId) {
             const tipsArea = document.getElementById(tipsAreaId);
-
-            // ロード状態と表示エリアの初期化
-            button.disabled = true;
             tipsArea.classList.remove('hidden');
-            tipsArea.innerHTML = '<p class="text-sm text-gray-600">ヒントを生成中...</p>';
-
-            try {
-                // プロンプトの作成
-                const prompt = `${grade}の${subject}の学習に役立つ、簡潔な学習ヒントを3つ、JSON形式の文字列配列で提供してください。`;
-                
-                let chatHistory = [];
-                chatHistory.push({ role: "user", parts: [{ text: prompt }] });
-
-                const payload = {
-                    contents: chatHistory,
-                    generationConfig: {
-                        responseMimeType: "application/json",
-                        responseSchema: {
-                            type: "ARRAY",
-                            items: { "type": "STRING" }
-                        }
-                    }
-                };
-
-                // ここにAPIキーを設定してください！
-                // IMPORTANT: Go to Google Cloud Console, enable the Gemini API,
-                // and create an API key for your project. Replace "YOUR_API_KEY_HERE"
-                // with your actual API key.
-                const apiKey = "AIzaSyCfV4iN_Gdgz6a_iwK19nc5UuRILU1ny6I"; // <-- ここにご自身のAPIキーを貼り付けてください！
-                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
-
-                const response = await fetch(apiUrl, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(payload)
-                });
-
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
-                }
-
-                const result = await response.json();
-
-                if (result.candidates && result.candidates.length > 0 &&
-                    result.candidates[0].content && result.candidates[0].content.parts &&
-                    result.candidates[0].content.parts.length > 0) {
-                    const jsonString = result.candidates[0].content.parts[0].text;
-                    const tips = JSON.parse(jsonString);
-
-                    // ヒントの表示
-                    if (Array.isArray(tips) && tips.length > 0) {
-                        tipsArea.innerHTML = '<ul class="list-disc list-inside text-sm space-y-1">';
-                        tips.forEach(tip => {
-                            tipsArea.innerHTML += `<li>${tip}</li>`;
-                        });
-                        tipsArea.innerHTML += '</ul>';
-                    } else {
-                        tipsArea.innerHTML = '<p class="text-sm text-red-500">ヒントを生成できませんでした。もう一度お試しください。</p>';
-                    }
-                } else {
-                    tipsArea.innerHTML = '<p class="text-sm text-red-500">ヒントの生成に失敗しました。レスポンス形式が不正です。</p>';
-                }
-            } catch (error) {
-                console.error('Error generating study tips:', error);
-                tipsArea.innerHTML = `<p class="text-sm text-red-500">ヒントの生成中にエラーが発生しました: ${error.message}</p>`;
-            } finally {
-                button.disabled = false;
-            }
+            tipsArea.innerHTML = '<p class="text-sm text-amber-600">AIアシスタント機能は現在削除されています。ヒントは利用できません。</p>';
         }
 
-        // 学校データ（AIアシスタント用）
-        const schoolData = [
-            { name: "大阪府立春日丘高等学校", type: "公立", travelTimeMinutes: 30, clubActivities: ["剣道部", "野球部", "サッカー部", "吹奏楽部", "ESS", "茶道部", "美術部", "軽音楽部", "テニス部", "陸上部", "水泳部"], features: ["進学校", "男女共学", "自習室", "国際交流"] },
-            { name: "大阪府立三島高等学校", type: "公立", travelTimeMinutes: 20, clubActivities: ["剣道部", "陸上部", "テニス部", "軽音楽部", "バスケットボール部", "バレーボール部", "吹奏楽部", "演劇部"], features: ["進学校", "男女共学", "部活動が盛ん", "地域連携"] },
-            { name: "大阪府立槻の木高等学校", type: "公立", travelTimeMinutes: 15, clubActivities: ["テニス部", "サッカー部", "吹奏楽部", "美術部", "ESS", "ダンス部", "水泳部"], features: ["単位制", "自由な校風", "男女共学", "駅から近い"] },
-            { name: "大阪府立高槻北高等学校", type: "公立", travelTimeMinutes: 25, clubActivities: ["野球部", "サッカー部", "バスケットボール部", "バレーボール部", "吹奏楽部", "美術部", "ESS"], features: ["文武両道", "男女共学", "落ち着いた環境"] },
-            { name: "大阪府立芥川高等学校", type: "公立", travelTimeMinutes: 20, clubActivities: ["サッカー部", "陸上部", "テニス部", "吹奏楽部", "演劇部", "茶道部"], features: ["男女共学", "面倒見が良い", "地域密着"] },
-            { name: "大阪府立大冠高等学校", type: "公立", travelTimeMinutes: 20, clubActivities: ["野球部", "サッカー部", "バスケットボール部", "バレーボール部", "軽音楽部", "美術部"], features: ["男女共学", "専門コースあり", "スポーツが盛ん"] },
-            { name: "大阪府立阿武野高等学校", type: "公立", travelTimeMinutes: 25, clubActivities: ["野球部", "サッカー部", "テニス部", "吹奏楽部", "ESS"], features: ["男女共学", "アットホームな雰囲気"] },
-            { name: "大阪府立島本高等学校", type: "公立", travelTimeMinutes: 25, clubActivities: ["剣道部", "野球部", "バスケットボール部", "吹奏楽部", "文芸部"], features: ["男女共学", "自然豊か", "少人数制"] },
-            { name: "関西大学高等部", type: "私立", travelTimeMinutes: 7, clubActivities: ["剣道部", "野球部", "サッカー部", "テニス部", "ESS", "吹奏楽部", "ロボット研究部"], features: ["大学連携", "男子校", "最先端施設", "指定校推薦"] },
-            { name: "高槻高等学校", type: "私立", travelTimeMinutes: 10, clubActivities: ["剣道部", "野球部", "サッカー部", "吹奏楽部", "ESS", "化学部", "物理部"], features: ["進学校", "男子校", "医歯薬系", "部活動が盛ん"] },
-            { name: "大阪青凌高等学校", type: "私立", travelTimeMinutes: 20, clubActivities: ["剣道部", "サッカー部", "バスケットボール部", "吹奏楽部", "美術部"], features: ["男女共学", "特進コース", "少人数教育", "駅から近い"] },
-            { name: "金光大阪高等学校", type: "私立", travelTimeMinutes: 20, clubActivities: ["野球部", "サッカー部", "テニス部", "吹奏楽部", "ESS", "ダンス部"], features: ["男女共学", "多様なコース", "スポーツ推薦", "施設充実"] },
-            { name: "大阪学院大学高等学校", type: "私立", travelTimeMinutes: 25, clubActivities: ["野球部", "サッカー部", "バスケットボール部", "吹奏楽部", "ESS"], features: ["大学連携", "男女共学", "国際教育"] },
-            { name: "常翔学園高等学校", type: "私立", travelTimeMinutes: 40, clubActivities: ["剣道部", "野球部", "サッカー部", "吹奏楽部", "ESS", "科学部"], features: ["大学連携", "男女共学", "理系に強い", "専門コース"] },
-            { name: "早稲田大阪高等学校", type: "私立", travelTimeMinutes: 25, clubActivities: ["野球部", "サッカー部", "テニス部", "吹奏楽部", "ESS"], features: ["大学連携", "男女共学", "難関私立"] },
-            { name: "京都橘高等学校", type: "私立", travelTimeMinutes: 45, clubActivities: ["吹奏楽部", "サッカー部", "バスケットボール部", "バレーボール部", "ESS"], features: ["男女共学", "部活動が盛ん", "立地が良い"] },
-            { name: "龍谷大学付属平安高等学校", type: "私立", travelTimeMinutes: 35, clubActivities: ["野球部", "サッカー部", "バスケットボール部", "吹奏楽部", "ESS", "茶道部"], features: ["大学連携", "男女共学", "スポーツ推薦", "伝統と実績"] },
-        ];
+        // Removed: School data (for AI assistant)
+        // const schoolData = [...];
 
-
-        /**
-         * 進路指導AIアシスタント機能: ユーザーの入力に基づいて高校を推薦する
-         */
-        async function generateGuidance() {
-            const travelTimeInput = document.getElementById('travelTimeInput');
-            const otherConditionsInput = document.getElementById('otherConditionsInput');
-            const guidanceOutput = document.getElementById('guidanceOutput');
-            const generateGuidanceBtn = document.getElementById('generateGuidanceBtn');
-            const buttonText = document.getElementById('buttonText');
-            const loadingSpinner = document.getElementById('loadingSpinner');
-
-            const travelTime = parseInt(travelTimeInput.value);
-            const otherConditions = otherConditionsInput.value.trim();
-
-            if (isNaN(travelTime) && otherConditions === '') {
-                guidanceOutput.classList.remove('hidden');
-                guidanceOutput.innerHTML = '<p class="text-sm text-red-500">通学時間かその他の希望条件のいずれかを入力してください。</p>';
-                return;
-            }
-
-            // ローディング状態の表示
-            generateGuidanceBtn.disabled = true;
-            buttonText.textContent = '生成中...';
-            loadingSpinner.classList.remove('hidden');
-            guidanceOutput.classList.remove('hidden');
-            guidanceOutput.innerHTML = '<p class="text-sm text-gray-600">AIがおすすめの高校を探しています...</p>';
-
-            try {
-                // プロンプトの作成
-                let prompt = `以下の高校データに基づいて、ユーザーの希望に合う高校を提案してください。`;
-                prompt += `提案は簡潔に、各高校の名前とおすすめ理由を2つ以上の文章で記述し、JSON形式の配列で提供してください。`;
-                prompt += `例: [{"schoolName": "高校A", "reason": "通学時間が短く、〇〇部があります。また、〇〇の教育に力を入れています。"}, ...]`;
-                prompt += `もし希望の部活動やその他の条件に関する情報がデータにない場合でも、通学時間内で、総合的な魅力や偏差値、または多様な部活動が期待できる学校を提案してください。`;
-                prompt += `高校データ: ${JSON.stringify(schoolData)}. `;
-                if (!isNaN(travelTime)) {
-                    prompt += `希望通学時間: ${travelTime}分以内。`;
-                }
-                if (otherConditions !== '') {
-                    prompt += `その他の希望条件: ${otherConditions}。`;
-                }
-                
-                let chatHistory = [];
-                chatHistory.push({ role: "user", parts: [{ text: prompt }] });
-
-                const payload = {
-                    contents: chatHistory,
-                    generationConfig: {
-                        responseMimeType: "application/json",
-                        responseSchema: {
-                            type: "ARRAY",
-                            items: {
-                                type: "OBJECT",
-                                properties: {
-                                    "schoolName": { "type": "STRING" },
-                                    "reason": { "type": "STRING" }
-                                },
-                                required: ["schoolName", "reason"]
-                            }
-                        }
-                    }
-                };
-
-                // ここにAPIキーを設定してください！
-                // IMPORTANT: Go to Google Cloud Console, enable the Gemini API,
-                // and create an API key for your project. Replace "YOUR_API_KEY_HERE"
-                // with your actual API key.
-                const apiKey = "AIzaSyCfV4iN_Gdgz6a_iwK19nc5UuRILU1ny6I"; // <-- ここにご自身のAPIキーを貼り付けてください！
-                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
-
-                const response = await fetch(apiUrl, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(payload)
-                });
-
-                if (!response.ok) {
-                    const errorBody = await response.text();
-                    throw new Error(`HTTP error! status: ${response.status}, body: ${errorBody}`);
-                }
-
-                const result = await response.json();
-
-                if (result.candidates && result.candidates.length > 0 &&
-                    result.candidates[0].content && result.candidates[0].content.parts &&
-                    result.candidates[0].content.parts.length > 0) {
-                    const jsonString = result.candidates[0].content.parts[0].text;
-                    const recommendations = JSON.parse(jsonString);
-
-                    if (Array.isArray(recommendations) && recommendations.length > 0) {
-                        let outputHtml = '<h3 class="text-lg font-bold text-[#03045E] mb-2">おすすめの高校:</h3><ul class="list-disc list-inside space-y-2">';
-                        recommendations.forEach(school => {
-                            outputHtml += `<li><strong class="text-[#0077B6]">${school.schoolName}:</strong> ${school.reason}</li>`;
-                        });
-                        outputHtml += '</ul>';
-                        guidanceOutput.innerHTML = outputHtml;
-                    } else {
-                        guidanceOutput.innerHTML = '<p class="text-sm text-gray-600">ご希望に合う高校は見つかりませんでした。条件を調整して再度お試しください。</p>';
-                    }
-                } else {
-                    guidanceOutput.innerHTML = '<p class="text-sm text-red-500">AIアシスタントが応答できませんでした。後でもう一度お試しください。</p>';
-                }
-
-            } catch (error) {
-                console.error('Error generating guidance:', error);
-                guidanceOutput.innerHTML = `<p class="text-sm text-red-500">提案の生成中にエラーが発生しました: ${error.message}</p>`;
-            } finally {
-                // ローディング状態の解除
-                generateGuidanceBtn.disabled = false;
-                buttonText.textContent = 'アシスタントに相談';
-                loadingSpinner.classList.add('hidden');
-            }
-        }
+        // Removed: Career guidance AI assistant function (generateGuidance function)
+        // async function generateGuidance() { ... }
     </script>
 </body>
 </html>
